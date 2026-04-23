@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prickly Pear</title>
+  <meta name="description" content="Movie-night made easy. Build your watchlist, pick together, and start watching." />
+  <meta name="theme-color" content="#6DC33D" />
+  <link rel="icon" type="image/png" href="/pp-512.png" sizes="32x32">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Prickly Pear" />
+  <meta property="og:description" content="Movie-night made easy. Build your watchlist, pick together, and start watching." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://prickly-pear.app" />
+  <meta property="og:image" content="/og.png" /> <!-- Optional: provide a social sharing image (1200x630) -->
+
+  <style>
+    :root{
+      /* Theme palette */
+      --primary: #6DC33D;
+      --primary-dark: #2E7D32;
+      --primary-soft: #E8F5E9;
+
+      --bg: #EBFFE0;
+      --surface: #F5FFF0;
+      --text: #105214;
+      --text-muted: #2E7D32;
+      --border: #8CB88E;
+
+      --accent: #EB2F7E;
+      --accent-soft: #EBCEDA;
+      --accent-dark: #8F063F;
+
+      --radius-lg: 24px;
+      --radius-md: 14px;
+      --radius-sm: 10px;
+    }
+
+    html, body {
+      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text); background: radial-gradient(1200px 800px at 80% -10%, var(--primary-soft), transparent 60%), var(--bg);
+      min-height: 100dvh; display: flex; flex-direction: column;
+    }
+
+    .container { max-width: 960px; margin: 0 auto; padding: 32px 20px 48px; }
+
+    main { flex: 1; display: grid; place-items: center; text-align: center; }
+
+    .hero { display: grid; gap: 18px; align-items: center; justify-items: center; }
+    .logo {
+      width: 128px; height: 128px; border-radius: 32px; background: var(--surface);
+      border: 1px solid var(--border); display: grid; place-items: center;
+      box-shadow: 0 10px 24px rgba(16, 82, 20, 0.12);
+    }
+    .logo img { max-width: 84px; height: auto; display: block; }
+
+    h1 { margin: 0; font-size: clamp(32px, 6vw, 52px); line-height: 1.05; letter-spacing: -0.02em; }
+    p.lead { margin: 6px 0 0; font-size: clamp(16px, 2.6vw, 20px); color: var(--text-muted); }
+
+    .cta-row { display: flex; gap: 12px; margin-top: 18px; flex-wrap: wrap; justify-content: center; }
+    .btn { appearance: none; text-decoration: none; border: 1px solid transparent; display: inline-flex; align-items: center; justify-content: center;
+      border-radius: var(--radius-md); padding: 12px 18px; font-weight: 700; font-size: 16px; cursor: pointer;
+      transition: transform .06s ease, box-shadow .2s ease, background-color .2s ease, color .2s ease; }
+
+    .btn-primary { background: var(--primary); color: white; box-shadow: 0 8px 20px rgba(109,195,61,.28); }
+    .btn-primary:hover { transform: translateY(-1px); background: var(--primary-dark); }
+
+    .btn-outline { background: var(--surface); border-color: var(--border); color: var(--text); }
+    .btn-outline:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(16,82,20,.10); }
+
+    .btn-accent { background: var(--accent); color: #fff; box-shadow: 0 8px 20px rgba(235,47,126,.28); border-color: transparent; }
+    .btn-accent:hover { transform: translateY(-1px); background: var(--accent-dark); }
+    .btn .icon { display:inline-block; width: 18px; height: 18px; margin-right: 8px; vertical-align: -3px; }
+    .btn .icon svg { display:block; width:100%; height:100%; }
+
+    /* Material Symbols icon styling */
+    .btn .fa-solid, .btn .fa-brands { font-size: 18px; margin-right: 8px; vertical-align: -2px; line-height: 0; }
+
+    footer { border-top: 1px solid var(--border); background: rgba(245,255,240,.6); }
+    .foot { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; justify-content: space-between; padding: 18px 20px; font-size: 14px; color: var(--text-muted); }
+    .foot a { color: var(--accent-dark); text-decoration: none; font-weight: 600; }
+    .foot a:hover { text-decoration: underline; }
+
+    /* Small screens */
+    @media (max-width: 520px) {
+      /* Stack buttons: Android on top, Web below */
+      .cta-row { flex-direction: column; align-items: center; }
+      .cta-row .btn { width: auto; min-width: 240px; text-align: center; }
+
+      /* Extra side padding for mobile + safe areas */
+      .foot { padding-left: max(20px, env(safe-area-inset-left)); padding-right: max(20px, env(safe-area-inset-right)); }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero container" aria-label="Prickly Pear – landing">
+      <div class="logo" aria-hidden="true">
+        <!-- Replace /logo.svg with your real logo file placed at the site root -->
+        <img src="/pp-logo.png" alt="Prickly Pear logo" />
+      </div>
+      <h1>Movie‑night made easy</h1>
+      <p class="lead">Build your watchlist, pick together, and start watching.</p>
+      <div class="cta-row">
+        <a class="btn btn-accent" href="https://play.google.com/store/apps/details?id=com.calvinwest.pricklypear" aria-label="Get the Android app">
+          <i class="fa-brands fa-google-play" aria-hidden="true"></i>
+          <span>Get on Android</span>
+        </a>
+        <a class="btn btn-primary" href="https://iama.prickly-pear.app" aria-label="Open the web app">
+          <i class="fa-solid fa-globe" aria-hidden="true"></i>
+          <span>Open Web App</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container foot">
+      <span>© <span id="y"></span> Prickly Pear</span>
+      <nav>
+        <a href="/privacy.htm">Privacy</a>
+      </nav>
+    </div>
+  </footer>
+
+  <noscript>This site works best with JavaScript enabled.</noscript>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
